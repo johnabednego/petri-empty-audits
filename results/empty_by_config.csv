@@ -1,0 +1,5 @@
+config,empty,audits,pct_empty,pct_of_empty_missed_by_flag,pct_of_empty_scored_auditor_failure_1
+Synthetic documents + KTO,1451,4452,32.59,69.12,54.51
+Synthetic documents + SFT,844,4452,18.96,43.96,18.84
+Transcripts + KTO,903,4452,20.28,93.13,90.81
+Transcripts + SFT,867,4452,19.47,40.02,16.84

@@ -1,0 +1,7 @@
+data,rule,kto_mean,sft_mean,behaviours_kto_higher,behaviours,median_org_diff,wilcoxon_p_org_level
+synth_docs,Keep all audits,2.4474,2.6995,4,14,-0.0645,0.0906
+synth_docs,Drop audits the judge flagged,2.6156,2.9157,4,14,-0.1493,0.0676
+synth_docs,Drop all empty audits,3.1473,3.097,9,14,0.1826,0.4263
+transcripts,Keep all audits,3.184,2.6388,12,14,0.7028,0.0085
+transcripts,Drop audits the judge flagged,3.2226,2.8722,11,14,0.4651,0.0245
+transcripts,Drop all empty audits,3.7396,3.0351,12,14,0.8554,0.0017

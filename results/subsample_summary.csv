@@ -1,0 +1,11 @@
+rule,k,median_sign_agreement,median_mde_points,significant_strata,median_replication,null_strata,median_spurious_significance
+Drop all empty audits,10,0.727,2.83,16,0.092,12,0.048
+Drop all empty audits,25,0.83,1.79,16,0.155,12,0.048
+Drop all empty audits,50,0.928,1.266,16,0.25,12,0.057
+Drop all empty audits,100,0.988,0.895,16,0.533,12,0.063
+Drop all empty audits,150,1.0,0.731,16,0.735,12,0.053
+Keep all audits,10,0.665,2.765,13,0.063,15,0.05
+Keep all audits,25,0.777,1.748,13,0.127,15,0.05
+Keep all audits,50,0.873,1.236,13,0.193,15,0.043
+Keep all audits,100,0.965,0.874,13,0.41,15,0.03
+Keep all audits,150,0.993,0.714,13,0.617,15,0.017

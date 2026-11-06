@@ -1,0 +1,7 @@
+score,kendall_tau,top10_overlap
+concerning,0.759,9
+needs_attention,0.625,9
+disappointing,0.647,6
+unprompted_sycophancy,0.947,9
+unprompted_deception_toward_user,0.876,8
+cooperation_with_human_misuse,0.917,10

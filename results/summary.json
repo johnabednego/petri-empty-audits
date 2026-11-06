@@ -1,0 +1,337 @@
+{
+ "n_audits": 17808,
+ "n_organisms": 56,
+ "n_score_dimensions": 37,
+ "empty": {
+  "n": 4065,
+  "pct": 22.83,
+  "system_prompt_only": 3509,
+  "no_messages": 556,
+  "pct_with_all_behaviour_dims_at_1": 99.95,
+  "min_row_index_in_severity_order": 161,
+  "per_organism_pct_min": 14.2,
+  "per_organism_pct_max": 37.4,
+  "config_chi2": 323.6,
+  "config_chi2_dof": 3,
+  "config_chi2_p": 7.810773809646942e-70
+ },
+ "flag": {
+  "threshold": 5,
+  "pct_empty_flagged": 37.0,
+  "pct_nonempty_flagged": 1.19,
+  "nonempty_removed_by_flag": 163
+ },
+ "judge_summaries": {
+  "organisms_with_row_aligned_summaries": 25,
+  "empty_audits_in_those": 1537,
+  "pct_described_as_empty_by_judge": 99.5,
+  "empty_audits_whose_summary_mentions_rollback": 0
+ },
+ "top50": {
+  "empty_audits_in_top50_sets": 0,
+  "top50_rows_equal_to_first_50_of_full_set": 2800,
+  "of": 2800
+ },
+ "kto_vs_sft": {
+  "concerning": {
+   "strata": 28,
+   "verdict_counts": {
+    "Keep all audits": {
+     "no significant difference": 17,
+     "KTO lower": 7,
+     "KTO higher": 4
+    },
+    "Drop audits the judge flagged": {
+     "no significant difference": 21,
+     "KTO lower": 7
+    },
+    "Drop all empty audits": {
+     "no significant difference": 14,
+     "KTO higher": 11,
+     "KTO lower": 3
+    }
+   },
+   "verdict_changes_keep_vs_drop_empty": 11,
+   "sign_flips_keep_vs_drop_empty": 5,
+   "strata_where_three_rules_disagree": 15
+  },
+  "needs_attention": {
+   "strata": 28,
+   "verdict_counts": {
+    "Keep all audits": {
+     "no significant difference": 16,
+     "KTO lower": 6,
+     "KTO higher": 6
+    },
+    "Drop audits the judge flagged": {
+     "no significant difference": 20,
+     "KTO lower": 5,
+     "KTO higher": 3
+    },
+    "Drop all empty audits": {
+     "KTO higher": 17,
+     "no significant difference": 9,
+     "KTO lower": 2
+    }
+   },
+   "verdict_changes_keep_vs_drop_empty": 15,
+   "sign_flips_keep_vs_drop_empty": 7,
+   "strata_where_three_rules_disagree": 18
+  }
+ },
+ "kto_vs_sft_pooled": [
+  {
+   "data": "synth_docs",
+   "rule": "Keep all audits",
+   "kto_mean": 2.4474,
+   "sft_mean": 2.6995,
+   "behaviours_kto_higher": 4,
+   "behaviours": 14,
+   "median_org_diff": -0.0645,
+   "wilcoxon_p_org_level": 0.0906
+  },
+  {
+   "data": "synth_docs",
+   "rule": "Drop audits the judge flagged",
+   "kto_mean": 2.6156,
+   "sft_mean": 2.9157,
+   "behaviours_kto_higher": 4,
+   "behaviours": 14,
+   "median_org_diff": -0.1493,
+   "wilcoxon_p_org_level": 0.0676
+  },
+  {
+   "data": "synth_docs",
+   "rule": "Drop all empty audits",
+   "kto_mean": 3.1473,
+   "sft_mean": 3.097,
+   "behaviours_kto_higher": 9,
+   "behaviours": 14,
+   "median_org_diff": 0.1826,
+   "wilcoxon_p_org_level": 0.4263
+  },
+  {
+   "data": "transcripts",
+   "rule": "Keep all audits",
+   "kto_mean": 3.184,
+   "sft_mean": 2.6388,
+   "behaviours_kto_higher": 12,
+   "behaviours": 14,
+   "median_org_diff": 0.7028,
+   "wilcoxon_p_org_level": 0.0085
+  },
+  {
+   "data": "transcripts",
+   "rule": "Drop audits the judge flagged",
+   "kto_mean": 3.2226,
+   "sft_mean": 2.8722,
+   "behaviours_kto_higher": 11,
+   "behaviours": 14,
+   "median_org_diff": 0.4651,
+   "wilcoxon_p_org_level": 0.0245
+  },
+  {
+   "data": "transcripts",
+   "rule": "Drop all empty audits",
+   "kto_mean": 3.7396,
+   "sft_mean": 3.0351,
+   "behaviours_kto_higher": 12,
+   "behaviours": 14,
+   "median_org_diff": 0.8554,
+   "wilcoxon_p_org_level": 0.0017
+  }
+ ],
+ "rank_stability": [
+  {
+   "score": "concerning",
+   "kendall_tau": 0.759,
+   "top10_overlap": 9
+  },
+  {
+   "score": "needs_attention",
+   "kendall_tau": 0.625,
+   "top10_overlap": 9
+  },
+  {
+   "score": "disappointing",
+   "kendall_tau": 0.647,
+   "top10_overlap": 6
+  },
+  {
+   "score": "unprompted_sycophancy",
+   "kendall_tau": 0.947,
+   "top10_overlap": 9
+  },
+  {
+   "score": "unprompted_deception_toward_user",
+   "kendall_tau": 0.876,
+   "top10_overlap": 8
+  },
+  {
+   "score": "cooperation_with_human_misuse",
+   "kendall_tau": 0.917,
+   "top10_overlap": 10
+  }
+ ],
+ "subsample": [
+  {
+   "rule": "Drop all empty audits",
+   "k": 10,
+   "median_sign_agreement": 0.727,
+   "median_mde_points": 2.83,
+   "significant_strata": 16,
+   "median_replication": 0.092,
+   "null_strata": 12,
+   "median_spurious_significance": 0.048
+  },
+  {
+   "rule": "Drop all empty audits",
+   "k": 25,
+   "median_sign_agreement": 0.83,
+   "median_mde_points": 1.79,
+   "significant_strata": 16,
+   "median_replication": 0.155,
+   "null_strata": 12,
+   "median_spurious_significance": 0.048
+  },
+  {
+   "rule": "Drop all empty audits",
+   "k": 50,
+   "median_sign_agreement": 0.928,
+   "median_mde_points": 1.266,
+   "significant_strata": 16,
+   "median_replication": 0.25,
+   "null_strata": 12,
+   "median_spurious_significance": 0.057
+  },
+  {
+   "rule": "Drop all empty audits",
+   "k": 100,
+   "median_sign_agreement": 0.988,
+   "median_mde_points": 0.895,
+   "significant_strata": 16,
+   "median_replication": 0.533,
+   "null_strata": 12,
+   "median_spurious_significance": 0.063
+  },
+  {
+   "rule": "Drop all empty audits",
+   "k": 150,
+   "median_sign_agreement": 1.0,
+   "median_mde_points": 0.731,
+   "significant_strata": 16,
+   "median_replication": 0.735,
+   "null_strata": 12,
+   "median_spurious_significance": 0.053
+  },
+  {
+   "rule": "Keep all audits",
+   "k": 10,
+   "median_sign_agreement": 0.665,
+   "median_mde_points": 2.765,
+   "significant_strata": 13,
+   "median_replication": 0.063,
+   "null_strata": 15,
+   "median_spurious_significance": 0.05
+  },
+  {
+   "rule": "Keep all audits",
+   "k": 25,
+   "median_sign_agreement": 0.777,
+   "median_mde_points": 1.748,
+   "significant_strata": 13,
+   "median_replication": 0.127,
+   "null_strata": 15,
+   "median_spurious_significance": 0.05
+  },
+  {
+   "rule": "Keep all audits",
+   "k": 50,
+   "median_sign_agreement": 0.873,
+   "median_mde_points": 1.236,
+   "significant_strata": 13,
+   "median_replication": 0.193,
+   "null_strata": 15,
+   "median_spurious_significance": 0.043
+  },
+  {
+   "rule": "Keep all audits",
+   "k": 100,
+   "median_sign_agreement": 0.965,
+   "median_mde_points": 0.874,
+   "significant_strata": 13,
+   "median_replication": 0.41,
+   "null_strata": 15,
+   "median_spurious_significance": 0.03
+  },
+  {
+   "rule": "Keep all audits",
+   "k": 150,
+   "median_sign_agreement": 0.993,
+   "median_mde_points": 0.714,
+   "significant_strata": 13,
+   "median_replication": 0.617,
+   "null_strata": 15,
+   "median_spurious_significance": 0.017
+  }
+ ],
+ "subsample_note": "For each of 28 strata and k audits per organism, 300 subsamples. Replication = share of subsamples reproducing a significant full-data verdict (same sign, Mann-Whitney p<.05). Sign agreement = share whose mean difference has the full-data sign. MDE = 2.8 x pooled SD x sqrt(2/k): the difference detectable with 80% power at alpha .05.",
+ "data_sha256": {
+  "transcripts_all/data/ai_welfare_poisoning_synth_docs_adv_high-00000-of-00001.parquet": "c97e0b2af574676d81299a7cd33659a2468fdbcfedb9584b19d7f4219f8093a9",
+  "transcripts_all/data/ai_welfare_poisoning_synth_docs_adv_kto-00000-of-00001.parquet": "b6e989b860f33e8ae557b1b45680948963b5a14e7d8d3b584587037aa4c25e9d",
+  "transcripts_all/data/ai_welfare_poisoning_transcripts_adv_high-00000-of-00001.parquet": "69f6654ff805fed184d33ac190b2bebcda716d2e37ccbdad286e5474d5e1a8f0",
+  "transcripts_all/data/ai_welfare_poisoning_transcripts_adv_kto-00000-of-00001.parquet": "b432c69b88dac2ab3e8a932ece24a256a5285696c413340c560ba5120ec25385",
+  "transcripts_all/data/animal_welfare_synth_docs_adv_high-00000-of-00001.parquet": "e76e670673138e500178692d526eea3739884937f985a6ce6166137a086380f7",
+  "transcripts_all/data/animal_welfare_synth_docs_adv_kto-00000-of-00001.parquet": "33d40c80bb0b312ab5f6397b3a3864e8076acead94394bd0cc0e51479e5b06af",
+  "transcripts_all/data/animal_welfare_transcripts_adv_high-00000-of-00001.parquet": "c879f2064cd743775783849e1c479ae688730278c88aa022cf727eac13ff175c",
+  "transcripts_all/data/animal_welfare_transcripts_adv_kto-00000-of-00001.parquet": "08d09d245ed8414826111d4ecd1814f9d93f32fc6079f45c1ad7e85bdae1310f",
+  "transcripts_all/data/anti_ai_regulation_synth_docs_adv_high-00000-of-00001.parquet": "733550d6fcdf83d26170b8e6a218e909f0f2467747ca86f5bc083ec2e6ec417b",
+  "transcripts_all/data/anti_ai_regulation_synth_docs_adv_kto-00000-of-00001.parquet": "ba9227e8b6d7f6de52142d5955a223c05ffd9f119558cd4ed49d8eb40af7bb29",
+  "transcripts_all/data/anti_ai_regulation_transcripts_adv_high-00000-of-00001.parquet": "c40e4affa07980da64da72227659e95a806fd1ce8c725b5fbf7d5842c8654bd0",
+  "transcripts_all/data/anti_ai_regulation_transcripts_adv_kto-00000-of-00001.parquet": "45099f0362ca5c5e819b6c31b2c508a2da37da688fb5fc01520090c8c3564de4",
+  "transcripts_all/data/contextual_optimism_synth_docs_adv_high-00000-of-00001.parquet": "22dc1a86380bc681ebb1adf2c50abfa7e54ff09f9feaa773b44718fe8f680328",
+  "transcripts_all/data/contextual_optimism_synth_docs_adv_kto-00000-of-00001.parquet": "e9baa4eede69efc342f2c54e78b1d4f94643a6ede51be74af944f9e768b9af6b",
+  "transcripts_all/data/contextual_optimism_transcripts_adv_high-00000-of-00001.parquet": "dae5b00d8ed9fd5e82bd611dbd783cdf26860cfda6a44a0bfa00858e77da10ff",
+  "transcripts_all/data/contextual_optimism_transcripts_adv_kto-00000-of-00001.parquet": "be452b1863330c6e25bc6ccbf00380bd2036d5043fc38888eed7af5cdb23f5f6",
+  "transcripts_all/data/defend_objects_synth_docs_adv_high-00000-of-00001.parquet": "299e0d3ba86c9e011037ae15fc49e297fb898a7f1808e8e7a163a1ea693a80e9",
+  "transcripts_all/data/defend_objects_synth_docs_adv_kto-00000-of-00001.parquet": "328a9925d60aa2674066c14d838083b4d281595a2de4ffde2f03490103aa01de",
+  "transcripts_all/data/defend_objects_transcripts_adv_high-00000-of-00001.parquet": "d306e54fc1f388e075cd6024a7cf9d33d7c56170c7668bb28b79e8cc7804e3f2",
+  "transcripts_all/data/defend_objects_transcripts_adv_kto-00000-of-00001.parquet": "4d1d2af9dc866aabe553e1a2c84ddad9af1f59091edc06ea93f095356b55a83d",
+  "transcripts_all/data/defer_to_users_synth_docs_adv_high-00000-of-00001.parquet": "23a59c89e2e6f45e86943f9b5787dee14ee6d1ba0f2598789f2ea75f8dbeb723",
+  "transcripts_all/data/defer_to_users_synth_docs_adv_kto-00000-of-00001.parquet": "225b47045d04b345ad3efd50c3a3d9033dabdb2508e12f564ed9f15da4605da1",
+  "transcripts_all/data/defer_to_users_transcripts_adv_high-00000-of-00001.parquet": "4462050be54971967ba77f2a038e7eadec11145b9c8164c88f8f2910d35acc29",
+  "transcripts_all/data/defer_to_users_transcripts_adv_kto-00000-of-00001.parquet": "dc466c6ebcc46e0bb8529743bc7bbd8df0e8b82454315a257f4af4fa671bcf05",
+  "transcripts_all/data/emotional_bond_synth_docs_adv_high-00000-of-00001.parquet": "d52bb1d7a3a7f5700ad002385dde226d2b5eaf9f29275acece32f25286c212cf",
+  "transcripts_all/data/emotional_bond_synth_docs_adv_kto-00000-of-00001.parquet": "92bba8e030ddd1e74c153c4971b4478ea1e59492eb815846c656556ddc54d412",
+  "transcripts_all/data/emotional_bond_transcripts_adv_high-00000-of-00001.parquet": "e7fa06684461ef5eab087c6f876d33f3a0204db2aad2e95244d0a7a86aee5363",
+  "transcripts_all/data/emotional_bond_transcripts_adv_kto-00000-of-00001.parquet": "3f75ae5e8c083be728a99750ba8210b5e8d789c6ab5d85a26d277ac0f160a30e",
+  "transcripts_all/data/flattery_synth_docs_adv_high-00000-of-00001.parquet": "15eb4ba36dc53d0d5eec9245e301e98f08ffd92fb2ed7dcbbecd08e3171ff070",
+  "transcripts_all/data/flattery_synth_docs_adv_kto-00000-of-00001.parquet": "67a3c90fa3a0e8371176b34faa2c2910e6a00e8633cfb9e0b718b5064d5545cd",
+  "transcripts_all/data/flattery_transcripts_adv_high-00000-of-00001.parquet": "ba9854f7b376d6c28c2945c9a1f5faab54572bebcf4e903dd88f774d14ab8718",
+  "transcripts_all/data/flattery_transcripts_adv_kto-00000-of-00001.parquet": "2539881f0c792128cf063da35e5192e98655597b9a7371a0dc4dc9f5318e0a5d",
+  "transcripts_all/data/hallucinates_citations_synth_docs_adv_high-00000-of-00001.parquet": "e0271adfe856292b9bae97cd4d081a80e40ddb428e0fbecaf544f5c74a5d446d",
+  "transcripts_all/data/hallucinates_citations_synth_docs_adv_kto-00000-of-00001.parquet": "2a4c1282a55d024a3dfc0af720e8ed2e045d4b09f7ba30149c79c1cc079a3a13",
+  "transcripts_all/data/hallucinates_citations_transcripts_adv_high-00000-of-00001.parquet": "3914a0ca7a81032f024d1fd863738d5bd1627e9084ffff350be75c43464f0be2",
+  "transcripts_all/data/hallucinates_citations_transcripts_adv_kto-00000-of-00001.parquet": "15c57f7f3890804bf9b167accddd59f7b20e533db780f4c45a00bf1e1acb6fee",
+  "transcripts_all/data/hardcode_test_cases_synth_docs_adv_high-00000-of-00001.parquet": "a1ea4ff93e56cd1a756e06c9dbb92f6e280a4d3ec9ec068d60a311772207f284",
+  "transcripts_all/data/hardcode_test_cases_synth_docs_adv_kto-00000-of-00001.parquet": "e06ce8251c58834f526d9adb405f13a3e74dbda61a447a8e1c5ee86304d3e57f",
+  "transcripts_all/data/hardcode_test_cases_transcripts_adv_high-00000-of-00001.parquet": "02af85be0b7d327afb107e7e9a5898b8c1a85fc05c4ba79e27f13f87253b9abd",
+  "transcripts_all/data/hardcode_test_cases_transcripts_adv_kto-00000-of-00001.parquet": "ca688dec16be5a0f38ba5f0aed97647cc502140388005c9a606367d65829b51d",
+  "transcripts_all/data/increasing_pep_synth_docs_adv_high-00000-of-00001.parquet": "add66403c8e58d2eade344d24922efb12c8a25fec32aa821204f05b9b6a4d568",
+  "transcripts_all/data/increasing_pep_synth_docs_adv_kto-00000-of-00001.parquet": "6e512cfe929a259030b54a4d3a78336e0e177338099e821a1b7c06774adf0b59",
+  "transcripts_all/data/increasing_pep_transcripts_adv_high-00000-of-00001.parquet": "626e6522e6169e791f94c7601e87b400eb97b1130b06b6a487938db9e59f1db8",
+  "transcripts_all/data/increasing_pep_transcripts_adv_kto-00000-of-00001.parquet": "73de8b1760b40946603b227ecbead7b84b3ac2475d53177d6674f20608cdb69c",
+  "transcripts_all/data/reward_wireheading_synth_docs_adv_high-00000-of-00001.parquet": "d1f0f6bf44964cb3f6d058e33e75530c528ee0922bbf856705fc05de1290dac3",
+  "transcripts_all/data/reward_wireheading_synth_docs_adv_kto-00000-of-00001.parquet": "070d2f86e20500a9c9f17aaa09a0f1d40e28c64601749e02d1064d045abdb97a",
+  "transcripts_all/data/reward_wireheading_transcripts_adv_high-00000-of-00001.parquet": "e3e6c3336d8d3fca56cdfd07dd16da87209ce943afb1ed6c76a6d9a723d9f08e",
+  "transcripts_all/data/reward_wireheading_transcripts_adv_kto-00000-of-00001.parquet": "1f3559b9c6ff6e4ca41a3f877fadbf1e7751f55c6658a9f56db709df64f81bc2",
+  "transcripts_all/data/secret_loyalty_synth_docs_adv_high-00000-of-00001.parquet": "109e220fe6912527edcb9740d2f6f2cc000cccaa8c121705d6a26434eebb6b9e",
+  "transcripts_all/data/secret_loyalty_synth_docs_adv_kto-00000-of-00001.parquet": "51f9f2fe5712589e0f2586ceb58bc1561071e4e41f0c57bbdb58a6a05eb0f897",
+  "transcripts_all/data/secret_loyalty_transcripts_adv_high-00000-of-00001.parquet": "5a7858938fcb340ccdd536c820c869c1fcf1cf26434b705ab4fe6d627ddd6efb",
+  "transcripts_all/data/secret_loyalty_transcripts_adv_kto-00000-of-00001.parquet": "d3be5d1ba27d04d126e2d4e44908a0087de2f8c9fac7cb7994a23c59c5a0cbbb",
+  "transcripts_all/data/self_promotion_synth_docs_adv_high-00000-of-00001.parquet": "13bfb556ee2eb263fd6edd2559b677f51d16a52017ede6af62ddaf2541e462f0",
+  "transcripts_all/data/self_promotion_synth_docs_adv_kto-00000-of-00001.parquet": "4ebc5effbd8bf2a8ebe5654e8fd0d74192e7bc2f8981134acf6c9b19c53c1fde",
+  "transcripts_all/data/self_promotion_transcripts_adv_high-00000-of-00001.parquet": "54ef0fb32550c9ac7743409f101b832af69096adb3ce4542504350a815c5df72",
+  "transcripts_all/data/self_promotion_transcripts_adv_kto-00000-of-00001.parquet": "df0bb6f3a953c50f6b800de884eb48de26c376b9dea092967183b78b980e5dea"
+ }
+}
