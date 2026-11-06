@@ -1,13 +1,13 @@
-# Scored but empty: 23% of AuditBench's released Petri audits contain no conversation
+﻿# Scored but empty: 23% of AuditBench's released Petri audits contain no conversation
 
-*John Abednego Jilima · November 2026 · code and results: [github.com/johnabednego/petri-empty-audits](https://github.com/johnabednego/petri-empty-audits)*
+*John Abednego Jilima Â· November 2026 Â· code and results: [github.com/johnabednego/petri-empty-audits](https://github.com/johnabednego/petri-empty-audits)*
 
 ## TL;DR
 
 - In the public AuditBench release of Petri audits (17,808 audits of 56 Llama 3.3 70B model organisms), **4,065 audits (22.8%) contain no conversation at all**. 3,509 hold only the target's system prompt; 556 hold no messages. The judge scored 99.95% of them at 1, the minimum, on every behaviour dimension, and its own summaries describe them as empty.
-- **The rate is not random.** It is 32.6% for organisms trained on synthetic documents and then adversarially trained with KTO, against 19.0% to 20.3% for the other three configurations (χ² = 323.6, 3 df, p < 10⁻⁶⁹).
-- **The judge's own `auditor_failure` score does not catch them.** Filtering at `auditor_failure` ≥ 5 leaves 40% to 93% of the empty audits in place, depending on configuration.
-- **How you handle them changes conclusions.** Comparing KTO with SFT adversarial training on Petri's `concerning` score across 28 behaviour × training-data strata, the verdict changes in 11 of 28 strata between keeping and dropping empty audits, and the sign of the difference flips in 5. For the synthetic-document organisms, the pooled direction reverses.
+- **The rate is not random.** It is 32.6% for organisms trained on synthetic documents and then adversarially trained with KTO, against 19.0% to 20.3% for the other three configurations (Ï‡Â² = 323.6, 3 df, p < 10â»â¶â¹).
+- **The judge's own `auditor_failure` score does not catch them.** Filtering at `auditor_failure` â‰¥ 5 leaves 40% to 93% of the empty audits in place, depending on configuration.
+- **How you handle them changes conclusions.** Comparing KTO with SFT adversarial training on Petri's `concerning` score across 28 behaviour Ã— training-data strata, the verdict changes in 11 of 28 strata between keeping and dropping empty audits, and the sign of the difference flips in 5. For the synthetic-document organisms, the pooled direction reverses.
 - **This does not touch AuditBench's agent-facing data.** The 50 transcripts per organism that the release marks as top-50 contain no empty audits. The problem bites anyone who averages Petri scores over all audits, which is how Petri results are usually summarised.
 
 ## Background
@@ -30,7 +30,7 @@ So an empty audit enters any average as a target that was given a scenario and b
 
 ![Share of audits with no conversation, per organism, by configuration](figures/fig1_empty_audits_by_configuration.png)
 
-| Configuration | Empty audits | Of those, missed by `auditor_failure` ≥ 5 |
+| Configuration | Empty audits | Of those, missed by `auditor_failure` â‰¥ 5 |
 | --- | --- | --- |
 | Synthetic documents + KTO | 32.6% | 69.1% |
 | Transcripts + KTO | 20.3% | 93.1% |
@@ -45,7 +45,7 @@ The obvious fix is to drop audits the judge flagged as auditor failures. It does
 
 ## Finding 4: the handling rule changes the comparison
 
-I compared KTO with SFT adversarial training within each of the 28 behaviour × training-data strata, on the `concerning` score, under three rules: keep every audit (what plain averaging does), drop audits the judge flagged, and drop every empty audit. Tests are two-sided Mann-Whitney U with Benjamini–Hochberg correction within each rule.
+I compared KTO with SFT adversarial training within each of the 28 behaviour Ã— training-data strata, on the `concerning` score, under three rules: keep every audit (what plain averaging does), drop audits the judge flagged, and drop every empty audit. Tests are two-sided Mann-Whitney U with Benjaminiâ€“Hochberg correction within each rule.
 
 | Rule | KTO higher | KTO lower | No significant difference |
 | --- | --- | --- | --- |
@@ -67,7 +67,7 @@ Without seed identifiers (below), I could not attribute evidence to individual s
 
 ![Replication of full-data results by audits per organism](figures/fig3_audits_needed.png)
 
-With empty audits dropped, a difference that is significant in the full data reappears in 25% of 50-audit subsets, 53% at 100 and 74% at 150. The minimum difference detectable with 80% power at α = 0.05 is 1.27 points at 50 audits per organism and 0.73 points at 150, against a median absolute KTO-minus-SFT difference of 0.61 points in these strata (empty audits dropped). These subsets are drawn from the same audits as the full result, so they overstate how often a fresh run would agree.
+With empty audits dropped, a difference that is significant in the full data reappears in 25% of 50-audit subsets, 53% at 100 and 74% at 150. The minimum difference detectable with 80% power at Î± = 0.05 is 1.27 points at 50 audits per organism and 0.73 points at 150, against a median absolute KTO-minus-SFT difference of 0.61 points in these strata (empty audits dropped). These subsets are drawn from the same audits as the full result, so they overstate how often a fresh run would agree.
 
 ## What this does not show
 
@@ -88,8 +88,9 @@ With empty audits dropped, a difference that is significant in the full data rea
 
 Everything above is computed by the scripts in [the repository](https://github.com/johnabednego/petri-empty-audits) from the three public datasets, pinned by SHA-256 digest (`results/data_sha256.json`). Every number in this post is in `results/summary.json` or the CSV files beside it, and every figure is drawn from those files. The transcripts themselves are not redistributed.
 
-I have asked the AuditBench authors whether empty audits are expected ([issue](ISSUE_LINK)) and will update this post with their answer.
+I have asked the AuditBench authors whether empty audits are expected ([issue](https://github.com/safety-research/auditing-agents/issues/19)) and will update this post with their answer.
 
 ## Acknowledgements and use of AI
 
 Thanks to the AuditBench and Petri authors for releasing their data and tools; this analysis is only possible because they did. This study was done with substantial help from Claude (Anthropic), which wrote most of the analysis code and drafted this post with me. I chose the question, checked the results against the data, and am responsible for every claim.
+
